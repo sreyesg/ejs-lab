@@ -51,10 +51,10 @@ const RESTAURANT = {
   }
 
   
-
 // home route
 app.get('/', (req, res) => {
-    res.send('hello there!')
+    res.render('home.ejs', RESTAURANT)
 })
+
 
 app.listen(3000)
