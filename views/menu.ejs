@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('./partials/nav') %>
+    <h1>Full menu</h1>
     
+        <% menu.forEach((el, idx) => { %>
+            <h3><%= el.name%></h3>
+            <p>Price: <%= el.price%></p>
+            <p>Raitings: <%= el.rating%></p>
+            <p>Details: <%= el.details%></p>
+            <br>
+
+        <%})%>
+    
+
 </body>
 </html>

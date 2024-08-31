@@ -57,7 +57,8 @@ app.get('/', (req, res) => {
 })
 // menu route
 app.get('/menu', (req, res)=> {
-    res.render('menu.ejs', RESTAURANT)
+    
+    res.render('menu.ejs', RESTAURANT )
 })
 
 
