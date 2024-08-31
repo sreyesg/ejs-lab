@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title><%= name %></title>
 </head>
 <body>
-    <h1>name</h1>
-    <p>name: <%=name%> </p>
-    <p>name: <%=address%> </p>
-    <p>name: <%=phone%> </p>
+    <%- include('./partials/nav')%>
+    <h1><%=name%> </h1>
+    <p>address: <%=address%> </p>
+    <p>Phone: <%=phone%> </p>
+    <p><%= isOpen === true? 'Yes we are Open!' : 'Sorry, we are close'%></p>
 </body>
 </html>
