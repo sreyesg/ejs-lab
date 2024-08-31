@@ -6,18 +6,37 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- link nav partial -->
     <%- include('./partials/nav') %>
+    
+
     <h1>Full menu</h1>
     
-        <% menu.forEach((el, idx) => { %>
-            <h3><%= el.name%></h3>
-            <p>Price: <%= el.price%></p>
-            <p>Raitings: <%= el.rating%></p>
-            <p>Details: <%= el.details%></p>
-            <br>
+    <!-- declare global variables -->
+    <% let mains = []
+    let dessertes = [] 
+    %>
+    <!-- filter local object main property and push it to mains array  -->
+    <%let sides = []%>
+    <% menu.forEach((el, idx) => { %>
+        <%if (el.category === 'mains') {%>
+            <% mains.push(el)%>
+        <%}%>
 
-        <%})%>
+    <% })%>    
     
+     
+<h2>Mains</h2>  
+    <!-- declare main section  -->
+    <!-- iterate over mains array and write to html name, price, raiting, details properties. -->
+    <% mains.map((el) => { %>
+        <h5><%= el.name%> </h5>
+        <p>Price :$<%= el.price %> </p>
+        <p>Rating :<%= el.rating %> </p>
+        <p>Details :<%= el.details %> </p>
+    <% }) %>
+    
+
 
 </body>
 </html>
