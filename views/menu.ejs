@@ -15,16 +15,21 @@
     <!-- declare global variables -->
     <% let mainArr = []
     let dessertsArr = [] 
+    let sidesArr = []
     %>
-    <!-- filter local object main property and push it to mainArr array  -->
+    <!-- filter local object properties and push them to categories array like mainArr, dessertsArr, sidesArr -->
     <%let sides = []%>
+    
     <% menu.forEach((el, idx) => { %>
         <%if (el.category === 'mains') {%>
             <% mainArr.push(el)%>
         <%}else if (el.category === 'desserts') {%>
             <%dessertsArr.push(el)%>
-        <% }%>
-    <% })%>    
+        <% }else if (el.category === 'sides'){ %>
+            <% sidesArr.push(el) %>
+        <% } %>
+
+    <% }) %>    
     
      
 <h2>Mains</h2>  
@@ -47,6 +52,15 @@
         <p>Details :<%= el.details %> </p>
     <% }) %>
 
+    <h2>Sides</h2>
+
+    <%sidesArr.map((el) => { %>
+        <h5><%= el.mane %></h5>
+        <p>Price: $<%= el.price %></p>
+        <p>Rating: <%= el.rating %></p>
+        <p>Details: <%= el.details %></p>
+        
+    <% }) %>
 
 </body>
 </html>
