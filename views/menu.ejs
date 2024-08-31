@@ -13,29 +13,39 @@
     <h1>Full menu</h1>
     
     <!-- declare global variables -->
-    <% let mains = []
-    let dessertes = [] 
+    <% let mainArr = []
+    let dessertsArr = [] 
     %>
-    <!-- filter local object main property and push it to mains array  -->
+    <!-- filter local object main property and push it to mainArr array  -->
     <%let sides = []%>
     <% menu.forEach((el, idx) => { %>
         <%if (el.category === 'mains') {%>
-            <% mains.push(el)%>
-        <%}%>
-
+            <% mainArr.push(el)%>
+        <%}else if (el.category === 'desserts') {%>
+            <%dessertsArr.push(el)%>
+        <% }%>
     <% })%>    
     
      
 <h2>Mains</h2>  
     <!-- declare main section  -->
-    <!-- iterate over mains array and write to html name, price, raiting, details properties. -->
-    <% mains.map((el) => { %>
+    <!-- iterate over mainArr array and write to html name, price, raiting, details properties. -->
+    <% mainArr.map((el) => { %>
         <h5><%= el.name%> </h5>
         <p>Price :$<%= el.price %> </p>
         <p>Rating :<%= el.rating %> </p>
         <p>Details :<%= el.details %> </p>
     <% }) %>
     
+    <h2>Desserts</h2>  
+    <!-- declare desserts section  -->
+    <!-- iterate over mainArr array and write to html name, price, raiting, details properties. -->
+    <% dessertsArr.map((el) => { %>
+        <h5><%= el.name%> </h5>
+        <p>Price :$<%= el.price %> </p>
+        <p>Rating :<%= el.rating %> </p>
+        <p>Details :<%= el.details %> </p>
+    <% }) %>
 
 
 </body>
