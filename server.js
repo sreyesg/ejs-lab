@@ -71,6 +71,7 @@ app.get('/menu/:category', (req, res) => {
   })
   console.log(filteredMenu)
   res.render('category.ejs', {
+    categoryLabel: categoryParam,
     filteredMenu 
   })
 })

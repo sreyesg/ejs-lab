@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= categoryLabel %></title>
 </head>
 <body>
+    <% let title = '' %>
    <%- include('./partials/nav') %>
-    <% console.log('caca', filteredMenu) %>
+    <% console.log('results', filteredMenu) %>
     <% filteredMenu.forEach((el) => { %>
         <h1><%= el.name %></h1>
         <p>Price: <%= el.price %></p>
         <p>Rating: <%= el.rating %></p>
         <p>Details: <%= el.details %></p>
-    
+        <% title = el.name %>
     <% }) %>
 </body>
 </html>
