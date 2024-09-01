@@ -60,6 +60,10 @@ app.get('/menu', (req, res)=> {
     
     res.render('menu.ejs', RESTAURANT )
 })
-
+// menu/:category route
+app.get('/menu/:category', (req, res) => {
+  const category = req.params.category
+  res.render('category.ejs')
+})
 
 app.listen(3000)
