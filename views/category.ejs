@@ -6,7 +6,7 @@
     <title><%= categoryLabel %></title>
 </head>
 <body>
-    <% let title = '' %>
+    <h1><%= categoryLabel %></h1>
    <%- include('./partials/nav') %>
     <% console.log('results', filteredMenu) %>
     <% filteredMenu.forEach((el) => { %>
@@ -14,7 +14,7 @@
         <p>Price: <%= el.price %></p>
         <p>Rating: <%= el.rating %></p>
         <p>Details: <%= el.details %></p>
-        <% title = el.name %>
+        
     <% }) %>
 </body>
 </html>
