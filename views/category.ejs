@@ -6,11 +6,11 @@
     <title><%= categoryLabel %></title>
 </head>
 <body>
+    <%- include('./partials/nav') %>
     <h1><%= categoryLabel %></h1>
-   <%- include('./partials/nav') %>
     <% console.log('results', filteredMenu) %>
     <% filteredMenu.forEach((el) => { %>
-        <h1><%= el.name %></h1>
+        <h1><%= el.rating === 5 ? el.name + ' ⭐️': el.name %></h1>
         <p>Price: <%= el.price %></p>
         <p>Rating: <%= el.rating %></p>
         <p>Details: <%= el.details %></p>
