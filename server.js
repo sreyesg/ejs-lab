@@ -60,16 +60,19 @@ app.get('/menu', (req, res)=> {
     
     res.render('menu.ejs', RESTAURANT )
 })
-// menu/:category route
+// menu/:category route and 
+// filter menu array based of category route parameter
 app.get('/menu/:category', (req, res) => {
   const categoryParam = req.params.category
   console.log(categoryParam)
-  const categoryArr = RESTAURANT.menu.filter((el) => {
+  const filteredMenu = RESTAURANT.menu.filter((el) => {
     console.log(el)
     return el.category === categoryParam
   })
-  
-  res.render('category.ejs', categoryArr)
+  console.log(filteredMenu)
+  res.render('category.ejs', {
+    filteredMenu 
+  })
 })
 
 app.listen(3000)
