@@ -62,8 +62,14 @@ app.get('/menu', (req, res)=> {
 })
 // menu/:category route
 app.get('/menu/:category', (req, res) => {
-  const category = req.params.category
-  res.render('category.ejs')
+  const categoryParam = req.params.category
+  console.log(categoryParam)
+  const categoryArr = RESTAURANT.menu.filter((el) => {
+    console.log(el)
+    return el.category === categoryParam
+  })
+  
+  res.render('category.ejs', categoryArr)
 })
 
 app.listen(3000)
